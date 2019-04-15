@@ -7,37 +7,37 @@
 
 <div class="row mt">
           <div class="col-lg-6 col-md-6 col-sm-6">
-            <h4 class="title">Form Obat</h4>
+            <h4 class="title">Edit</h4>
             
             <form class="contact-form php-mail-form" action="obat" method="POST">
             {{ csrf_field() }}
 
               <div class="form-group">
-                <input type="text" name="id" class="form-control" placeholder="ID Obat">
+                <input type="hidden" name="id" value="{{ $obat>idObat }}" class="form-control">
                 <div class="validate"></div>
               </div>
               <div class="form-group">
-                <input type="text" name="nama" class="form-control" placeholder="Nama Obat">
+                <input type="text" name="nama" class="form-control" value="{{ $obat->nmObat }}">
                 <div class="validate"></div>
               </div>
               <div class="form-group">
-                <input type="text" name="kategori" class="form-control" placeholder="Kategori">
+                <input type="text" name="kategori" class="form-control" value="{{ $obat->kategori }}">
                 <div class="validate"></div>
               </div>
               <div class="form-group">
-                <input type="text" name="jumlah" class="form-control" placeholder="Jumlah">
+                <input type="text" name="jumlah" class="form-control" value="{{ $obat->jumlah }}">
                 <div class="validate"></div>
               </div>
               <div class="form-group">
-                <input type="text" name="harga" class="form-control" placeholder="Harga Satuan">
+                <input type="text" name="harga" class="form-control" value="{{ $obat->harga }}">
                 <div class="validate"></div>
               </div>
               <div class="form-group">
-                <input type="date" name="tanggal" class="form-control" placeholder="Expired">
+                <input type="date" name="tanggal" class="form-control" value="{{ $obat->tglExp }}">
                 <div class="validate"></div>
               </div>
               <div class="form-group">
-                <input type="text" name="stok" class="form-control" id="stok" placeholder="Stok">
+                <input type="text" name="stok" class="form-control" value="{{ $obat->stok }}">
                 <div class="validate"></div>
               </div>
 

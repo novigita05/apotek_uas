@@ -19,18 +19,6 @@ Route::get('master', function () {
     return view('master');
 });
 
-Route::get('login', function () {
-    return view('login');
-});
-
-Route::get('index', function () {
-    return view('index');
-});
-
-Route::get('form', function () {
-    return view('form');
-});
-
 Route::get('formpesan', function () {
     return view('formpesan');
 });
@@ -42,3 +30,26 @@ Route::get('formbeli', function () {
 Route::get('formjual', function () {
     return view('formjual');
 });
+
+Route::get('formdaftar', function () {
+    return view('formdaftar');
+});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+Route::get('/obat', 'ObatController@index');
+
+Route::get('/form', 'ObatController@create');
+
+Route::post('/obat', 'ObatController@store');
+
+//Route::get('/editObat/{id}','ObatController@edit');
+
+//Route::post('/obat','ObatController@update');
+
+//Route::get('/obat/destroy/{id}','ObatController@destroy');
+
+

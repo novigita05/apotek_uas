@@ -41,14 +41,14 @@
     @section('sidebar')
     <header class="header black-bg">
       <div class="sidebar-toggle-box">
-        <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+        
       </div>
       <!--logo start-->
       <a href="master" class="logo"><b>APOTEK<span>CAHYA</span></b></a>
       <!--logo end-->
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
-          <li><a class="logout" href="login">Logout</a></li>
+          <li><a class="logout" href="{{url('/logout')}}">Logout</a></li>
         </ul>
       </div>
     </header>
@@ -61,10 +61,10 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href="profile"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
-          <h5 class="centered">Sam Soffes</h5>
+          <p class="centered"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
+          <h5 class="centered">Apotek Cahya</h5>
           <li class="mt">
-            <a class="active" href="master">
+            <a class="active" href="home">
               <i class="fa fa-dashboard"></i>
               <span>HOME</span>
               </a>
