@@ -9,28 +9,49 @@
           <div class="col-lg-6 col-md-6 col-sm-6">
             <h4 class="title">Form Obat</h4>
             <div id="message"></div>
-            <form class="contact-form php-mail-form" role="form" action="formbeli.php" method="POST">
+            <form class="contact-form php-mail-form" action="{{ route('pembelian.store') }}" method="POST">
+            {{ csrf_field() }}
 
               <div class="form-group">
-                <input type="name" name="id " class="form-control" id="contact-name" placeholder="ID Pembelian" data-rule="minlen:4" data-msg="Please enter at least 4 chars" >
+                <input type="text" name="idPembelian" class="form-control" placeholder="ID Pembelian" autocomplete="off" required>
                 <div class="validate"></div>
               </div>
+
               <div class="form-group">
-                <input type="email" name="email" class="form-control" id="contact-email" placeholder="Nama Obat" data-rule="email" data-msg="Please enter a valid email">
-                <div class="validate"></div>
+                <select type="text" name="supplier_idSupplier" class="form-control" placeholder="ID Obat" autocomplete="off" required>
+                <option value="">Pilih ID Supplier</option>
+                @foreach($supplier as $sup)
+                <option value="{{$sup->idSupplier}}">{{$sup->idSupplier}}</option>
+                @endforeach
+                </select>
+
               </div>
               <div class="form-group">
-                <input type="text" name="subject" class="form-control" id="contact-subject" placeholder="Jumlah" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
-                <div class="validate"></div>
+                <select type="text" name="obat_idObat" class="form-control" placeholder="ID Obat" autocomplete="off" required>
+                <option value="">Pilih ID Obat</option>
+                @foreach($obat as $ob)
+                <option value="{{$ob->idObat}}">{{$ob->idObat}}</option>
+                @endforeach
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <select type="text" name="nmObat" class="form-control" placeholder="Nama Obat" autocomplete="off" required>
+                <option value="">Pilih Nama</option>
+                @foreach($obat as $ob)
+                <option value="{{$ob->idObat}}">{{$ob->nmObat}}</option>
+                @endforeach
+                </select>
               </div>
               <div class="form-group">
-                <input type="date" name="subject" class="form-control" id="contact-subject" placeholder="Expired" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
+                <input type="text" name="jumlah" class="form-control" placeholder="Jumlah" autocomplete="off" required>
                 <div class="validate"></div>
               </div>
 
 
               <div class="form-send">
                 <button type="submit" class="btn btn-large btn-primary">Submit</button>
+                <a href="{{ route('pembelian.index') }}" class="btn btn-large btn-primary">Batal</a>
               </div>
 
             </form>

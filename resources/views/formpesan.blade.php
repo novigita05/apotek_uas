@@ -7,38 +7,39 @@
 
 <div class="row mt">
           <div class="col-lg-6 col-md-6 col-sm-6">
-            <h4 class="title">Form Obat</h4>
-            <div id="message"></div>
-            <form class="contact-form php-mail-form" role="form" action="formpesan.php" method="POST">
+            <h4 class="title">Form Pemesanan</h4>
+            
+            <form class="contact-form php-mail-form" role="form" action="{{ route('pemesanan.store') }}" method="POST">
+            {{ csrf_field() }}
 
               <div class="form-group">
-                <input type="name" name="id " class="form-control" id="contact-name" placeholder="ID Pesan" data-rule="minlen:4" data-msg="Please enter at least 4 chars" >
+                <input type="name" name="pemesanan_idPesan" class="form-control" placeholder="ID Pesan" autocomplete="off" required >
                 <div class="validate"></div>
               </div>
               <div class="form-group">
-                <input type="email" name="email" class="form-control" id="contact-email" placeholder="Nama Obat" data-rule="email" data-msg="Please enter a valid email">
+                <input type="text" name="nmObat" class="form-control" placeholder="Nama Obat" autocomplete="off" required>
                 <div class="validate"></div>
               </div>
               <div class="form-group">
-                <input type="text" name="subject" class="form-control" id="contact-subject" placeholder="Jumlah" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
+                <input type="text" name="jumlah" class="form-control" placeholder="Jumlah" autocomplete="off" required>
                 <div class="validate"></div>
               </div>
               <div class="form-group">
-                <input type="date" name="subject" class="form-control" id="contact-subject" placeholder="Tanggal Pesan" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
+                <input type="date" name="tglPesan" class="form-control" placeholder="Tanggal Pesan" autocomplete="off" required>
                 <div class="validate"></div>
               </div>
               <div class="form-group">
-                <input type="text" name="subject" class="form-control" id="contact-subject" placeholder="Harga" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
-                <div class="validate"></div>
-              </div>
-              <div class="form-group">
-                <input type="text" name="subject" class="form-control" id="contact-subject" placeholder="Status Pemesanan" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
-                <div class="validate"></div>
+                <select class="form-control" name="status" autocomplete="off" required>
+                    <option value="">-- Pilih --</option>
+                    <option value="Ready">Ready</option>
+                    <option value="Not-Ready">Not-Ready</option>
+                </select>
               </div>
 
 
               <div class="form-send">
                 <button type="submit" class="btn btn-large btn-primary">Submit</button>
+                <a href="{{ route('pemesanan.index') }}" class="btn btn-large btn-primary">Batal</a>
               </div>
 
             </form>

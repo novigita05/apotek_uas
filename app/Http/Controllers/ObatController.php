@@ -26,7 +26,7 @@ class ObatController extends Controller
      */
     public function create()
     {
-        return view('/form');
+        return view('form');
     }
 
     /**
@@ -38,13 +38,13 @@ class ObatController extends Controller
     public function store(Request $request)
     {
         DB::table('obat')->insert([
-            'idObat' => $request->id,
-            'nmObat' => $request->nama,
-            'kategori' => $request->kategori,
-            'jumlah' => $request->jumlah,
-            'harga' => $request->harga,
-            'tglExp' => $request->tanggal,
-            'stok' => $request->stok
+            'idObat' => $request->idObat,
+            'nmObat' => $request->nmObat,
+            'hargaBeli' => $request->hargaBeli,
+            'hargaJual' => $request->hargaJual,
+            'tglExp' => $request->tglExp,
+            'stok' => $request->stok,
+            'satuan' => $request->satuan
         ]);
 
         return redirect('/obat');
@@ -71,7 +71,7 @@ class ObatController extends Controller
     {
         $obat = DB::table('obat')->where('idObat',$id)->get();
 
-        return view('/editObat',['obat' => $obat]);
+        return view('editObat',['obat' => $obat]);
     }
 
     /**
@@ -81,15 +81,15 @@ class ObatController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
-        DB::table('obat')->where('idObat',$request->id)->update([
-            'nmObat' => $request->nama,
-            'kategori' => $request->kategori,
-            'jumlah' => $request->jumlah,
-            'harga' => $request->harga,
-            'tglExp' => $request->tanggal,
-            'stok' => $request->stok
+        DB::table('obat')->where('idObat',$id)->update([
+            'nmObat' => $request->nmObat,
+            'hargaBeli' => $request->hargaBeli,
+            'hargaJual' => $request->hargaJual,
+            'tglExp' => $request->tglExp,
+            'stok' => $request->stok,
+            'satuan' => $request->satuan
         ]);
 
         return redirect('/obat');
