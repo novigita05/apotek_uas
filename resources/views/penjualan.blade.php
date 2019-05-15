@@ -17,6 +17,7 @@
 			    			<th>Id Penjualan</th>
                 <th>Id Obat</th>
 			    			<th>Nama Obat</th>
+								<th>Tanggal Keluar</th>
             		<th>Jumlah</th>
             		<th>Action</th>
 		</tr>
@@ -27,6 +28,7 @@
 			    <td>{{ $jual->idPenjualan }}</td>
           <td>{{ $jual->obat_idObat1 }}</td>
 			    <td>{{ $jual->nmObat }}</td>
+					<td>{{ $jual->tglKeluar }}</td>
           <td>{{ $jual->jumlah }}</td>
 			    <td>
 				<form action="{{route('penjualan.destroy', $jual->idPenjualan)}}" method="post">

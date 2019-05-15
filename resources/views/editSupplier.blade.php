@@ -9,7 +9,7 @@
           <div class="col-lg-6 col-md-6 col-sm-6">
             <h4 class="title">Edit</h4>
             @foreach($supplier as $sup)
-            <form class="contact-form php-mail-form" action="{{ route('obat.update', $sup->idSupplier) }}" method="POST">
+            <form class="contact-form php-mail-form" action="{{ route('supplier.update', $sup->idSupplier) }}" method="POST">
             {{ csrf_field() }}
             {{method_field('PATCH')}}
               <div class="form-group">
@@ -18,10 +18,6 @@
               </div>
               <div class="form-group">
                 <input type="text" name="alamat" class="form-control" value="{{ $sup->alamat }}" autocomplete="off" required>
-                <div class="validate"></div>
-              </div>
-              <div class="form-group">
-                <input type="date" name="tglKirim" class="form-control" value="{{ $sup->tglKirim }}" autocomplete="off" required>
                 <div class="validate"></div>
               </div>
 

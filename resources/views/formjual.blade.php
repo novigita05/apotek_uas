@@ -7,7 +7,7 @@
 
 <div class="row mt">
           <div class="col-lg-6 col-md-6 col-sm-6">
-            <h4 class="title">Obat Keluar</h4>
+            <h4 class="title">Form Obat Keluar</h4>
             <div id="message"></div>
             <form class="contact-form php-mail-form" action="{{ route('penjualan.store') }}" method="POST">
             {{ csrf_field() }}
@@ -27,9 +27,17 @@
               </div>
               
               <div class="form-group">
-                <input type="text" name="nmObat" class="form-control" placeholder="Nama Obat" autocomplete="off" required>
-                <div class="validate"></div>
+                <select type="text" name="nmObat" class="form-control" autocomplete="off" required>
+                <option value="">Pilih Nama Obat</option>
+                @foreach($obat as $ob)
+                <option value="{{$ob->nmObat}}">{{$ob->nmObat}}</option>
+                @endforeach
+                </select>
               </div>
+
+              <div class="form-group">
+                <input type="date" name="tglKeluar" class="form-control" placeholder="Tanggal Keluar" autocomplete="off" required>
+                <div class="validate"></div>
               </div>
               
               <div class="form-group">

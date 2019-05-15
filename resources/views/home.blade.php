@@ -13,34 +13,41 @@
 
           <div class="small-box bg-yellow">
              <h1> <p><b>Data Obat</b></p> </h1>
-            </div>
+           
             
-          <img src="img/tambah.jpg" class="img-circle" height="180" width="180"></a></p>
+            <img src="img/tambah2.jpg" class="img-circle" height="180" width="180"></a></p>
             <a class="btn btn-sm btn-danger" href="{{url('/obat/create')}}" class="small-box-footer">Tambah Data</a>
+            </div>
+            </div>
 
+            <div class="col-lg-6 col-md-6 col-sm-6">
             <div class="small-box bg-yellow">
             <h1> <p><b>Data Obat Keluar</b></p> </h1>
             </div>
             
-            <th><img src="img/tambah.jpg" class="img-circle" height="180" width="180"></a></p>
+            <th><img src="img/tambah1.png" class="img-circle" height="180" width="180"></a></p>
             <a class="btn btn-sm btn-danger" href="{{url('/penjualan/create')}}" class="small-box-footer">Tambah Data</a>
-
+            </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
             <div class="small-box bg-yellow">
             <h1> <p><b>Data Obat Masuk</b></p> </h1>
             </div>
             <div class="icon">
               <i class="ion ion-person-add"></i>
             </div>
-            <img src="img/tambah.jpg" class="img-circle" height="180" width="180"></a></p>
+            <img src="img/tambah3.png" class="img-circle" height="180" width="180"></a></p>
             <a class="btn btn-sm btn-danger" href="{{url('/pembelian/create')}}" class="small-box-footer">Tambah Data</a>
-
+            </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
             <div class="small-box bg-yellow">
             <h1> <p><b>Data Supplier</b></p> </h1>
             </div>
             <div class="icon">
               <i class="ion ion-person-add"></i>
             </div>
-            <img src="img/tambah.jpg" class="img-circle" height="180" width="180"></a></p>
+            <img src="img/tmbhsup.jpg" class="img-circle" height="180" width="180"></a></p>
             <a class="btn btn-sm btn-danger" href="{{url('/supplier/create')}}" class="small-box-footer">Tambah Data</a>
 
 

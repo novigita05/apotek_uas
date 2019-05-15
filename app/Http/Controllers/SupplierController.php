@@ -40,7 +40,6 @@ class SupplierController extends Controller
         DB::table('supplier')->insert([
             'idSupplier' => $request->idSupplier,
             'nmSupplier' => $request->nmSupplier,
-            'tglKirim' => $request->tglKirim,
             'alamat' => $request->alamat
         ]);
 
@@ -82,7 +81,6 @@ class SupplierController extends Controller
     {
         DB::table('supplier')->where('idSupplier',$id)->update([
             'nmSupplier' => $request->nmSupplier,
-            'tglKirim' => $request->tglKirim,
             'alamat' => $request->alamat
         ]);
 

@@ -28,6 +28,9 @@ class PembelianController extends Controller
     public function create()
     {
         $obat = Obat::orderBy('idObat', 'ASC')->get();
+
+        $obat = Obat::orderBy('nmObat', 'ASC')->get();
+
         $supplier = Supplier::orderBy('idSupplier', 'ASC')->get();
 
         return view('formbeli',compact('obat'), compact('supplier'));
@@ -46,6 +49,7 @@ class PembelianController extends Controller
             'obat_idObat' => $request->obat_idObat,
             'supplier_idSupplier' => $request->supplier_idSupplier,
             'nmObat' => $request->nmObat,
+            'tglKirim' => $request->tglKirim,
             'jumlah' => $request->jumlah
         ]);
 
@@ -71,8 +75,6 @@ class PembelianController extends Controller
      */
     public function edit($id)
     {
-        $obat = Obat::orderBy('idObat', 'ASC')->get();
-        
         $pembelian = DB::table('pembelian')->where('idPembelian',$id)->get();
 
         return view('editPembelian',['pembelian' => $pembelian]);

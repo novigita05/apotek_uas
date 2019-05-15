@@ -29,6 +29,8 @@ class PenjualanController extends Controller
     public function create()
     {
         $obat = Obat::orderBy('idObat', 'ASC')->get();
+        
+        $obat = Obat::orderBy('nmObat', 'ASC')->get();
 
         return view('formjual', compact('obat'));
     }
@@ -45,6 +47,7 @@ class PenjualanController extends Controller
             'idPenjualan' => $request->idPenjualan,
             'obat_idObat1' => $request->obat_idObat1,
             'nmObat' => $request->nmObat,
+            'tglKeluar' => $request->tglKeluar,
             'jumlah' => $request->jumlah
         ]);
 

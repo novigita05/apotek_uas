@@ -12,7 +12,6 @@
             <form class="contact-form php-mail-form" action="{{ route('pembelian.update', $beli->idPembelian) }}" method="POST">
             {{ csrf_field() }}
             {{method_field('PATCH')}}
-            
               <div class="form-group">
                 <input type="text" name="jumlah" class="form-control" value="{{ $beli->jumlah }}" autocomplete="off" required>
                 <div class="validate"></div>

@@ -17,7 +17,6 @@
 			<th>Id Supplier</th>
 			<th>Nama Supplier</th>
 			<th>Alamat</th>
-            <th>Tanggal Kirim</th>
             <th>Action</th>
 		</tr>
 		</thead>
@@ -27,7 +26,6 @@
 			<td>{{ $sup->idSupplier }}</td>
 			<td>{{ $sup->nmSupplier }}</td>
 			<td>{{ $sup->alamat }}</td>
-			<td>{{ $sup->tglKirim }}</td>
 			<td>
 				<form action="{{route('supplier.destroy', $sup->idSupplier)}}" method="post">
 				{{csrf_field()}}

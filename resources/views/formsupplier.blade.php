@@ -24,10 +24,6 @@
                 <input type="text" name="alamat" class="form-control" placeholder="Alamat" autocomplete="off" required>
                 <div class="validate"></div>
               </div>
-              <div class="form-group">
-                <input type="date" name="tglKirim" class="form-control" placeholder="Tanggal Kirim" autocomplete="off" required>
-                <div class="validate"></div>
-              </div>
 
 
               <div class="form-send">
